@@ -50,7 +50,7 @@ if prompt:=st.chat_input(placeholder = "What is Machine learning?"):
 
     #Converting tools to agents
 
-    search_agent = initialize_agent(tools, llm, AgentType.ZERO_SHOT_REACT_DESCRIPTION, handling_parse_errors =True)
+    search_agent = initialize_agent(tools=tools,llm=llm,agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,handle_parsing_errors=True)
     with st.chat_message("assistant"):
         st_cb = StreamlitCallbackHandler(st.container(), expand_new_thoughts=False)
         #response = search_agent.run(st.session_state.messages, callbacks=[st_cb])
