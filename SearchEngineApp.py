@@ -45,7 +45,7 @@ if prompt:=st.chat_input(placeholder = "What is Machine learning?"):
     st.session_state.messages.append({"role": "user","content": prompt})
     st.chat_message("user").write(prompt)
 
-    llm = ChatGroq(groq_api_key = api_key, model_name = "openai/gpt-oss-20b", streaming=True  )
+    llm = ChatGroq(groq_api_key = api_key, model_name = "openai/gpt-oss-20b", streaming=True, tool_choice="auto")
     tools = [search,arxiv]
 
     #Converting tools to agents
